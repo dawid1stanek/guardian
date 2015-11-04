@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Server</th>
+            <th>Test</th>
+            <th>Args</th>
+            <th>Last passed</th>
+            <th>Last failed</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for server, test, args, last_passed, last_failed in table %}
+        <tr>
+            <td>{{ server }}</td>
+            <td>{{ test }}</td>
+            <td>{{ args }}</td>
+            <td>{{ last_passed|default('') }}</td>
+            <td>{{ last_failed|default('') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
