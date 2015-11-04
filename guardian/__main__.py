@@ -7,7 +7,7 @@ import argparse
 import logging
 
 from mailer import Mailer, Message
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, PackageLoader
 
 import validators
 import database
@@ -68,7 +68,7 @@ def notify(args, config, db):
         LOGGER.info("Everything seems to be ok.")
     else:
         LOGGER.warning("One of tests failed, generate report.")
-        env = Environment(loader=FileSystemLoader('templates'))
+        env = Environment(loader=PackageLoader('guardian'))
         template = env.get_template('template.html')
         body = template.render(table=db.get_latest(config['notify']['track_last']))
         LOGGER.info("Sending email...")
