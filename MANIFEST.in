@@ -1,1 +1,1 @@
-include guardian/template.html
+include guardian/data/*

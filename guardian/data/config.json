@@ -1,0 +1,20 @@
+{
+    "smtp": {
+        "host": "smtp.example.com",
+        "port": 587,
+        "user": "user@example.com",
+        "password": "secret"
+    },
+    "notify": {
+        "subject": "Failure!",
+        "email": "admin@example.com",
+        "track_last": 60
+    },
+    "servers": [
+        {
+            "name": "localhost",
+            "address": "127.0.0.1",
+            "ports": [80, 22]
+        },
+    ]
+}
